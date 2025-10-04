@@ -14,11 +14,11 @@ jobs:
         uses: actions/checkout@v4
 
       - name: prime-cache-9f2f097
-        id: cache
+        id: prime-cache-9f2f097    # ✅ Give the step an ID (so we can reference it later)
         uses: actions/cache@v4
         with:
           path: ~/.cache/myapp
           key: cache-9f2f097
 
       - name: Check cache result
-        run: echo "Cache hit status: ${{ steps.cache.outputs.cache-hit }}"
+        run: echo "Cache hit status: ${{ steps.prime-cache-9f2f097.outputs.cache-hit }}"
